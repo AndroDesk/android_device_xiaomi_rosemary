@@ -24,6 +24,7 @@ error() {
 # Cleanup
 rm -rf device/mediatek/sepolicy_vndr
 rm -rf hardware/xiaomi
+rm -rf hardware/mediatek
 
 # Clone repository function
 cloneRepo() {
@@ -49,7 +50,8 @@ cloneRepo() {
 
 # Clone repositories one by one
 cloneRepo "https://github.com/hannahmontanadeving/android_device_mediatek_sepolicy_vndr" "device/mediatek/sepolicy_vndr"
-cloneRepo "https://github.com/mt6768-dev/android_hardware_xiaomi" "hardware/xiaomi"
+cloneRepo "https://github.com/mt6768-dev/android_hardware_xiaomi" "hardware/xiaomi" "-b lineage-21"
+cloneRepo "https://github.com/xiaomi-mediatek-devs/android_hardware_mediatek" "hardware/mediatek" "-b lineage-21"
 cloneRepo "https://github.com/AndroDesk/proprietary_vendor_xiaomi_rosemary" "vendor/xiaomi/rosemary"
 cloneRepo "https://github.com/hannahmontanadeving/android_kernel_xiaomi_mt6785" "kernel/xiaomi/mt6785" "--depth=1 --single-branch -b lineage-21"
 
